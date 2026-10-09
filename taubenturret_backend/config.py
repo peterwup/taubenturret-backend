@@ -26,3 +26,11 @@ API_PORT: int = int(os.getenv("API_PORT", "8081"))
 SAVE_IMAGES: str = os.getenv("SAVE_IMAGES", "detection")
 IMAGES_DIR: Path = Path(os.getenv("IMAGES_DIR", "./images"))
 LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO").upper()
+
+# Name of the input YOLO weight/ checkpoint used for export.
+# Examples: yolo11n.pt, yolo26n.pt, path/to/custom.pt
+YOLO_MODEL: str = os.getenv("YOLO_MODEL", "yolo11n.pt")
+
+# Final OpenVINO model directory that the backend loads at runtime.
+# Keep this fixed so the backend can stay agnostic to the source model version.
+YOLO_OPENVINO_MODEL: str = os.getenv("YOLO_OPENVINO_MODEL", "yolo_openvino_model")
