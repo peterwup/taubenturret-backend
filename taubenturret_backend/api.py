@@ -60,7 +60,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     elif config.SAVE_IMAGES != "no":
         logger.warning(f"Invalid configuration SAVE_IMAGES={config.SAVE_IMAGES}. Must be 'no', 'detection', or 'all'.")
 
-    detector = Detector(model="yolo_openvino_model")
+    detector = Detector(model=config.YOLO_OPENVINO_MODEL)
     app.state.detector = detector
 
     yield
