@@ -1,4 +1,4 @@
-INCLUDE .env
+-include .env
 export
 
 API_HOST ?= 0.0.0.0
